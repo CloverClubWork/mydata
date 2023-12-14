@@ -30,8 +30,6 @@ const body = document.querySelector('.main-body');
         return data;
       }
       
-      var episodeProvider,watchId,episodeNumber,subType,server,episodeCover,episodeTitle;
-      
       fetchData()
       .then(data => {
         
@@ -77,21 +75,11 @@ const body = document.querySelector('.main-body');
           tagsList.appendChild(li);
         }
         
-        const episodesList = data.episodes.data;
-        const episodes = episodesList[1];
-        episodeProvider = episodes.providerId;
-        for(let ep in episodes){
-          watchId = episodes[ep].id;
-          episodeCover = episodes[ep].img;
-          episodeTitle = episodes[ep].title;
-          episodeNumber = episodes[ep].number;
-        }
-        
       })
       .catch(error => {
         errorCon.textContent = error;
       });
       
       document.querySelector('.watch-btn').addEventListener('click', function(){
-        window.location.href = "watch.html?provider=anilist&providerId="+episodeProvider+"&watchId="+watchId+"&episodeNumber="+episodeNumber+"&id="+dataID+"&subType=sub&server=gogocdn";
+        window.location.href = "watch.html?id="+dataID;
       });
