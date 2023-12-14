@@ -1,136 +1,258 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>AniMega</title>
-    <link rel="stylesheet" href="https://cloverclubwork.github.io/mydata/css/style.css"/>
-  </head>
-  <body>
-    <div class="error-con"></div>
-    <div class="lazy-loader-effect">
-      <img src="https://cloverclubwork.github.io/mydata/images/SVKl.gif"/>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AniMega</title>
+  <link rel="stylesheet" href="https://cloverclubwork.github.io/mydata/css/style.css" />
+  <style>
+    .episode-container {
+      max-width: 100%;
+      height: auto;
+      margin: 8px 10px;
+      background-color: #3b3b3ba0;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    .episode-container h3 {
+      font-size: 20px;
+      padding: 7px 0;
+    }
+
+    .episode-container ul {
+      list-style-type: none;
+      width: inherit;
+      height: 300px;
+      padding: 0;
+      overflow: scroll
+    }
+
+    .episode-container ul li {
+      max-width: 100%;
+      height: 40px;
+      padding: 8px 10px;
+      margin: 5px;
+      background-color: #5b5b5ba0;
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .episode-container ul li a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="error-con"></div>
+  <div class="lazy-loader-effect">
+    <img src="https://cloverclubwork.github.io/mydata/images/SVKl.gif" />
+  </div>
+
+  <div class="main-body">
+
+    <div class="episode-container">
+      <h3>Select Episode</h3>
+      <ul id="episodeList"></ul>
     </div>
-    
-    <div class="main-body">
-      
-      <div class="episode-container">
-        <h3>Select Episode</h3>
-        <ul id="episodeList"></ul>
-      </div>
-      
-      
-    </div>
-    
-    <!-- <div class="main-body">
-      
-      <div class="banner-container">
-        <div id="banner-details">
-          <div class="background-shadow">
-            <img id="cover" src="" data-src=""/>
-            <h3 id="title"></h3>
-          </div>
+
+    <div class="banner-container">
+      <div id="banner-details">
+        <div class="background-shadow">
+          <img id="cover" src="" data-src="" />
+          <h3 id="title"></h3>
         </div>
       </div>
-      <div class="content">
-        
-        <div class="watch-container">
-          <div class="watch-btn">
-            <img src="https://cloverclubwork.github.io/mydata/images/icons8-play-96.png" />
-            <p>Watch Now</p>
-          </div>
-        </div> 
-        
-        <div class="content-container" id="content-container">
-          <h5>Information</h5>
-          <div><p>Ratings: </p><span id="ratings"></span></div>
-          <div><p>Popularity: </p><span id="popularity"></span></div>
-          <div><p>English: </p><span id="titleEnglish"></span></div>
-          <div><p>Romaji: </p><span id="titleRomaji"></span></div>
-          <div><p>Native: </p><span id="titleNative"></span></div>
-          <div><p>Status: </p><span id="status"></span></div>
-          <div><p>Type: </p><span id="type"></span></div>
-          <div><p>Format: </p><span id="format"></span></div>
-          <div><p>Year: </p><span id="year"></span></div>
-          <div><p>Season: </p><span id="season"></span></div>
-          <div><p>Duration: </p><span id="duration"></span></div>
-          <div>
-            <p>Genres: </p>
-            <ul id="genresList"></ul>
-          </div>
-          <div>
-            <p>Tags: </p>
-            <ul id="tagsList"></ul>
-          </div>
-          <div class="description"><p>Description </p><span id="description"></span></div>
+    </div>
+    <div class="content">
+
+      <!-- <div class="watch-container">
+        <div class="watch-btn">
+          <img src="https://cloverclubwork.github.io/mydata/images/icons8-play-96.png" />
+          <p>Watch Now</p>
         </div>
-        
+      </div> -->
+
+      <div class="content-container" id="content-container">
+        <h5>Information</h5>
+        <div>
+          <p>Ratings: </p><span id="ratings"></span>
+        </div>
+        <div>
+          <p>Popularity: </p><span id="popularity"></span>
+        </div>
+        <div>
+          <p>English: </p><span id="titleEnglish"></span>
+        </div>
+        <div>
+          <p>Romaji: </p><span id="titleRomaji"></span>
+        </div>
+        <div>
+          <p>Native: </p><span id="titleNative"></span>
+        </div>
+        <div>
+          <p>Status: </p><span id="status"></span>
+        </div>
+        <div>
+          <p>Type: </p><span id="type"></span>
+        </div>
+        <div>
+          <p>Format: </p><span id="format"></span>
+        </div>
+        <div>
+          <p>Year: </p><span id="year"></span>
+        </div>
+        <div>
+          <p>Season: </p><span id="season"></span>
+        </div>
+        <div>
+          <p>Duration: </p><span id="duration"></span>
+        </div>
+        <div>
+          <p>Genres: </p>
+          <ul id="genresList"></ul>
+        </div>
+        <div>
+          <p>Tags: </p>
+          <ul id="tagsList"></ul>
+        </div>
+        <div class="description">
+          <p>Description </p><span id="description"></span>
+        </div>
       </div>
-      
-    </div> -->
-    
 
-    <!-- <script src="https://cloverclubwork.github.io/mydata/watch-episodes.js" type="text/javascript"></script> -->
-    <script>
-const body = document.querySelector('.main-body');
-const lazy = document.querySelector('.lazy-loader-effect');
-const errorCon = document.querySelector('.error-con');
+    </div>
 
-function getQueryParam(key) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(key);
-}
-    
-// Example of how to use it
-const dataID = getQueryParam('id');
+  </div>
 
-const urlParam = "https://api.anify.tv/episodes/"+dataID;
 
-async function getEpisodes(){
-  const response = await fetch(urlParam);
-  body.style.display = 'none';
-  lazy.style.display = 'flex';
-  errorCon.style.display = "none";
-  
-  if(!response.ok){
-    const error = "Failed to fetch data from server";
-    body.style.display = 'none';
-    lazy.style.display = 'none';
-    errorCon.style.display = "flex";
-    throw new Error(error);
-  }
-  const data = await response.json();
-  return data;
-}
+  <!-- <script src="https://cloverclubwork.github.io/mydata/watch-episodes.js" type="text/javascript"></script> -->
+  <script>
+    const body = document.querySelector('.main-body');
+    const lazy = document.querySelector('.lazy-loader-effect');
+    const errorCon = document.querySelector('.error-con');
 
-getEpisodes()
-.then(data => {
-  body.style.display = 'block';
-  lazy.style.display = 'none';
-  errorCon.style.display = "none";
-  
-  const episodesList = document.getElementById("episodesList");
-  
-  const gogoAnimeProvider = data[1];
-  console.log(gogoAnimeProver);
-  for(let gogo in gogoAnimeProver){
-  	const li = document.createElement('li');
-      const link = document.createElement('a');
-      link.setAttribute('href','');
-      
-      //Set value to list
-      link.innerHTML = gogoAnimeProvider[gogo].title;
-      
-      li.appendChild(link);
-      episodesList.appendChild(li);
-      
-  }
-  
-  
-})
-.catch(error => {
-  errorCon.textContent = error;
-});
-    </script>
-  </body>
+    function getQueryParam(key) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(key);
+    }
+
+    // Example of how to use it
+    const dataID = getQueryParam('id');
+    const provider = getQueryParam('provider');
+
+    const urlParam = "https://api.anify.tv/episodes/"+dataID;
+    const urlParam2 = "https://api.anify.tv/media/"+provider+"/"+dataID;
+
+    async function getEpisodes() {
+      const response = await fetch(urlParam);
+      body.style.display = 'none';
+      lazy.style.display = 'flex';
+      errorCon.style.display = "none";
+
+      if (!response.ok) {
+        const error = "Failed to fetch data from server";
+        body.style.display = 'none';
+        lazy.style.display = 'none';
+        errorCon.style.display = "flex";
+        throw new Error(error);
+      }
+      const data = await response.json();
+      return data;
+    }
+
+    getEpisodes()
+      .then(data => {
+        body.style.display = 'block';
+        lazy.style.display = 'none';
+        errorCon.style.display = "none";
+
+        const episodesList = document.getElementById("episodeList");
+
+        const gogoAnimeProvider = data[1].episodes;
+
+        for (let i in gogoAnimeProvider) {
+
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+
+          link.setAttribute("href", "");
+
+          link.textContent = gogoAnimeProvider[i].title;
+
+          li.appendChild(link);
+          episodesList.appendChild(li);
+
+        }
+
+      })
+      .catch(error => {
+        errorCon.textContent = error;
+      });
+
+    async function fetchData() {
+      const response = await fetch(urlParam2);
+
+      if (!response.ok) {
+        const error = "Failed to fetch data from server";
+        throw new Error(error);
+      }
+      const data = await response.json();
+      return data;
+    }
+
+    fetchData()
+      .then(data => {
+
+        document.quarySelector('.background-shadow').style.backgroundImage = "none";
+        document.getElementById("cover").src = data.coverImage;
+        document.getElementById("title").textContent = data.title.romaji;
+        document.getElementById("titleEnglish").textContent = data.title.english;
+        document.getElementById("titleRomaji").textContent = data.title.romaji;
+        document.getElementById("titleNative").textContent = data.title.native;
+        document.getElementById("ratings").textContent = data.rating.anilist;
+        document.getElementById("popularity").textContent = data.popularity.anilist;
+        document.getElementById("status").textContent = data.status;
+        document.getElementById("type").textContent = data.type;
+        document.getElementById("format").textContent = data.format;
+        document.getElementById("duration").textContent = data.duration + " min";
+        document.getElementById("year").textContent = data.year;
+        document.getElementById("season").textContent = data.season;
+        document.getElementById("description").textContent = data.description;
+
+        const genresList = document.getElementById("genresList");
+        const tagsList = document.getElementById("tagsList");
+        const genre = data.genres;
+        const tag = data.tags;
+
+        for (let i = 0; i < genre.length; i++) {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.setAttribute("href", "");
+          a.textContent = genre[i];
+          li.appendChild(a);
+          genresList.appendChild(li);
+        }
+        for (let x = 0; x < tag.length; x++) {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.setAttribute("href", "");
+          a.textContent = tag[x];
+          li.appendChild(a);
+          tagsList.appendChild(li);
+        }
+
+      })
+      .catch(error => {
+        errorCon.textContent = error;
+      });
+  </script>
+</body>
+
 </html>
