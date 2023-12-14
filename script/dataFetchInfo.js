@@ -8,8 +8,8 @@ const body = document.querySelector('.main-body');
       }
     
       // Example of how to use it
-      const dataID = getQueryParam('id');
-      const provider = getQueryParam('provider');
+      var dataID = getQueryParam('id');
+      var provider = getQueryParam('provider');
       const urlParam = "https://api.anify.tv/media/"+provider+"/"+dataID;
       
       async function fetchData(){
@@ -30,7 +30,7 @@ const body = document.querySelector('.main-body');
         return data;
       }
       
-      let episodeProvider,watchId,episodeNumber,subType,server,episodeCover,episodeTitle;
+      var episodeProvider,watchId,episodeNumber,subType,server,episodeCover,episodeTitle;
       
       fetchData()
       .then(data => {
