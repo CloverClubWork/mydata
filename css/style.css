@@ -14,10 +14,30 @@ body{
   height: 100vh;
   background-color: #03011a;
 }
+.error-con{
+  max-width: 100%;
+  height: 500px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.lazy-loader-effect{
+  max-width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lazy-loader-effect img{
+  width: 50px;
+  height: 50px;
+}
 .main-body{
   max-width: 100%;
   height: 100%;
   padding: 10px 0;
+  display: none;
 }
 .seasonal-container, .trending-container, .popular-container{
   width: inherit;
@@ -59,3 +79,129 @@ body{
   font-size: 15px;
   font-weight: 500;
 }
+#banner-details{
+        max-width: 100%;
+        height: 400px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+#banner-details .background-shadow{
+        width: 100%;
+        height: 100%;
+        background-image: url('https://cloverclubwork.github.io/mydata/images/shadowcover.png');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px;
+      }
+#banner-details .background-shadow img{
+        min-width: 150px;
+        height: 230px;
+        border-radius: 8px;
+      }
+#banner-details .background-shadow h3{
+        text-align: center;
+        padding: 7px;
+      }
+.content{
+        max-width: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+.content-container{
+        width: 100%;
+        margin: 8px 10px;
+        background-color: #3b3b3ba0;
+        border-radius: 10px;
+        padding: 10px;
+      }
+.content-container h5{
+        color: #00f20ca0;
+        padding: 7px;
+        text-align: center;
+      }
+.content-container div{
+        margin: 10px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+.content-container div p{
+        font-size: 14px;
+        color: #00f20ca0;
+      }
+.content-container div span{
+        color: ghostwhite;
+        font-size: 14px;
+        margin-left: 7px;
+      }
+.content-container .description{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+.content-container .description p{
+        margin: 0 0 7px 0;
+      }
+.content-container div ul{
+        width: 100%;
+        margin: 0 8px;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: scroll;
+      }
+.content-container div ul li{
+        padding: 8px;
+        width: auto;
+        height: auto;
+        background-color: #5b5b5ba0;
+        border-radius: 8px;
+        margin: 0 5px;
+      }
+.content-container div ul li a{
+        text-decoration: none;
+        font-size: 14px;
+      }
+.watch-container{
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+.watch-btn{
+        width: 200px;
+        padding: 10px 15px;
+        height: auto;
+        border-radius: 10px;
+        background-color: #f99000a0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+.watch-btn img{
+        width: 23px;
+        height: 23px;
+      }
+.watch-btn p{
+        margin-left: 6px;
+      }
+.watch-btn:active{
+        background-color: #3d56ffa0;
+      }

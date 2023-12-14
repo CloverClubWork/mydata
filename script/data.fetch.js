@@ -1,18 +1,29 @@
+const body = document.querySelector('.main-body');
+const lazy = document.querySelector('.lazy-loader-effect');
+const errorCon = document.querySelector('.error-con');
 async function fetchAnimeData(){
   const response = await fetch("https://api.anify.tv/seasonal/anime?fields=[id,title,coverImage,bannerImage,rating]");
+  
+  body.style.display = 'none';
+  lazy.style.display = 'flex';
+  errorCon.style.display = "none";
   
   if(!response.ok){
     const error = "Failed to fetch data from server.";
     throw new Error(error);
+    body.style.display = 'none';
+    lazy.style.display = 'none';
+    errorCon.style.display = 'flex';
   }
-  
-  const data = await response.json();
-  return data;
+    const data = await response.json();
+    return data;
   
 }
 fetchAnimeData()
 .then(data => {
-  
+  body.style.display = 'block';
+  lazy.style.display = 'none';
+  errorCon.style.display = 'none';
   const seasonalList = document.getElementById("seasonalList");
   const trendingList = document.getElementById("trendingList");
   const popularList = document.getElementById("popularList");
@@ -34,7 +45,7 @@ fetchAnimeData()
     listTitle.textContent = dataSeasonal[items].title.romaji;
     listCover.src = dataSeasonal[items].coverImage;
     const id = dataSeasonal[items].id;
-    listLink.href = "/pages.html?id="+id;
+    listLink.href = "pages/pages.html?provider=anilist&id="+id;
     
     listLink.appendChild(listCover);
     listLink.appendChild(listTitle);
@@ -59,7 +70,7 @@ fetchAnimeData()
   
     listTitle.textContent = dataTrending[items].title.romaji;
     listCover.src = dataTrending[items].coverImage;
-    listLink.href = "/pages.html?id="+id;
+    listLink.href = "pages/pages.html?provider=anilist&id="+id;
     
     listLink.appendChild(listCover);
     listLink.appendChild(listTitle);
@@ -84,7 +95,7 @@ fetchAnimeData()
     
     listTitle.textContent = dataPopular[items].title.romaji;
     listCover.src = dataPopular[items].coverImage;
-    listLink.href = "/pages.html?id="+id;
+    listLink.href = "pages/pages.html?provider=anilist&id="+id;
     
     listLink.appendChild(listCover);
     listLink.appendChild(listTitle);
@@ -95,4 +106,6 @@ fetchAnimeData()
   }
   
 })
-.catch(error => console.log(error));
+.catch(error => {
+  errorCon.textContent = error;
+});
