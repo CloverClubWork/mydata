@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 17px;
+  color: ghostwhite;
+  font-family: 'Comfortaa', sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  height: 100vh;
+  background-color: #03011a;
+}
+.main-body{
+  max-width: 100%;
+  height: 100%;
+  padding: 10px 0;
+}
+.seasonal-container, .trending-container, .popular-container{
+  width: inherit;
+  height: auto;
+  padding: 10px;
+}
+.seasonal-container h1, .trending-container h1, .popular-container h1{
+  font-size: 20px;
+  padding: 0 5px;
+}
+#seasonalList, #trendingList, #popularList{
+  width: 100%;
+  height: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  display: flex;
+  flex-direction: row;
+}
+#seasonalList li, #trendingList li, #popularList li{
+  margin: 5px;
+  min-width: 150px;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+#seasonalList li a, #trendingList li a, #popularList li a{
+  text-decoration: none;
+  width: inherit;
+  height: inherit;
+}
+#seasonalList li a img, #trendingList li a img, #popularList li a img{
+  width: 100%;
+  height: 230px;
+  border-radius: 5px;
+}
+#seasonalList li a p, #trendingList li a p, #popularList li a p{
+  font-size: 15px;
+  font-weight: 500;
+}

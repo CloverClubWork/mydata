@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>AniMega</title>
+  </head>
+  <body>
+    
+    
+    <script type="text/javascript">
+      // Function to get query parameters from the URL
+      function getQueryParam(key) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(key);
+      }
+    
+      // Example of how to use it
+      const paramValue = getQueryParam('id');
+      alert("My id "+ paramValue);
+    </script>
+  </body>
+</html>
