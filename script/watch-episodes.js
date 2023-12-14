@@ -20,10 +20,10 @@ async function getEpisodes(){
   
   if(!response.ok){
     const error = "Failed to fetch data from server";
-    throw new Error(error);
     body.style.display = 'none';
     lazy.style.display = 'none';
     errorCon.style.display = "flex";
+    throw new Error(error);
   }
   const data = await response.json();
   return data;
@@ -35,7 +35,7 @@ getEpisodes()
   lazy.style.display = 'none';
   errorCon.style.display = "none";
   
-  console.log(data)
+  console.log(data);
   
 })
 .catch(error => {
