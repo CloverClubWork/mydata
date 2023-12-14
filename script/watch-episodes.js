@@ -8,13 +8,8 @@ function getQueryParam(key) {
 }
     
 // Example of how to use it
-const dataID = getQueryParam('watchId');
-const provider = getQueryParam('provider');
-const providerId = getQueryParam('providerId');
-const episodeNumber = getQueryParam('episodeNumber');
-const subType = getQueryParam('subType');
-const server = getQueryParam('server');
+const dataID = getQueryParam('id');
 
-const urlParam = "https://api.anify.tv/sources?providerId="+episodeProvider+"&watchId="+watchId+"&episodeNumber="+episodeNumber+"&id="+dataID+"&subType=sub&server=gogocdn";
+const urlParam = "https://api.anify.tv/episodes/"+dataID;
 
 console.log(urlParam)
