@@ -1,4 +1,4 @@
-const body = document.querySelector('.main-body');
+var page = document.querySelector('.main-body');
       const lazy = document.querySelector('.lazy-loader-effect');
       const errorCon = document.querySelector('.error-con');
       
@@ -15,14 +15,14 @@ const body = document.querySelector('.main-body');
       async function fetchData(){
         const response = await fetch(urlParam);
         
-        body.style.display = 'none';
+        page.style.display = 'none';
         lazy.style.display = 'flex';
         errorCon.style.display = "none";
   
         if(!response.ok){
           const error = "Failed to fetch data from server";
           throw new Error(error);
-          body.style.display = 'none';
+          page.style.display = 'none';
           lazy.style.display = 'none';
           errorCon.style.display = "flex";
         }
@@ -33,7 +33,7 @@ const body = document.querySelector('.main-body');
       fetchData()
       .then(data => {
         
-        body.style.display = 'block';
+        page.style.display = 'block';
         lazy.style.display = 'none';
         errorCon.style.display = "none";
         document.getElementById("banner-details").style.backgroundImage = "url('"+data.bannerImage+"')";
