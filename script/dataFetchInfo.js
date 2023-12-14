@@ -21,10 +21,10 @@ var page = document.querySelector('.main-body');
   
         if(!response.ok){
           const error = "Failed to fetch data from server";
-          throw new Error(error);
           page.style.display = 'none';
           lazy.style.display = 'none';
           errorCon.style.display = "flex";
+          throw new Error(error);
         }
         const data = await response.json();
         return data;
