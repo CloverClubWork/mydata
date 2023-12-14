@@ -109,9 +109,22 @@ getEpisodes()
   lazy.style.display = 'none';
   errorCon.style.display = "none";
   
-  console.log(data);
-  
   const episodesList = document.getElementById("episodesList");
+  
+  const gogoAnimeProvider = data[1];
+  console.log(gogoAnimeProver);
+  for(let gogo in gogoAnimeProver){
+  	const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.setAttribute('href','');
+      
+      //Set value to list
+      link.innerHTML = gogoAnimeProvider[gogo].title;
+      
+      li.appendChild(link);
+      episodesList.appendChild(li);
+      
+  }
   
   
 })
